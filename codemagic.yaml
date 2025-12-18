@@ -53,7 +53,7 @@ workflows:
       app_store_connect: codemagic
     environment:
       ios_signing:
-        distribution_type: ad_hoc  # Mudado de app_store para ad_hoc (para teste inicial)
+        distribution_type: development  # Tipo mais permissivo para início
         bundle_identifier: com.deuquanto.app
       vars:
         APP_STORE_APPLE_ID: 1234567890
