@@ -53,7 +53,7 @@ workflows:
       app_store_connect: codemagic
     environment:
       ios_signing:
-        distribution_type: app_store
+        distribution_type: ad_hoc  # Mudado de app_store para ad_hoc (para teste inicial)
         bundle_identifier: com.deuquanto.app
       vars:
         APP_STORE_APPLE_ID: 1234567890
@@ -92,7 +92,11 @@ workflows:
           failure: true
       app_store_connect:
         auth: integration
-        submit_to_testflight: true
-        beta_groups:
-          - App Beta Testers
+        submit_to_testflight: false  # Desabilitado até criar o app no App Store Connect
+        # Para habilitar TestFlight:
+        # 1. Crie o app no App Store Connect com Bundle ID: com.deuquanto.app
+        # 2. Mude distribution_type para: app_store
+        # 3. Mude submit_to_testflight para: true
+        # beta_groups:
+        #   - App Beta Testers
         submit_to_app_store: false
